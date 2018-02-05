@@ -9,7 +9,7 @@ using std::endl;
 using namespace SPLINTER;
 
 // Six-hump camelback function
-double f(DenseVector x)
+double f(Eigen::VectorXd& x)
 {
     assert(x.rows() == 2);
     return (4 - 2.1*x(0)*x(0)
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     DataTable samples;
 
     // Sample the function
-    DenseVector x(2);
+    Eigen::VectorXd x(2);
     double y;
     for(int i = 0; i < 20; i++)
     {
