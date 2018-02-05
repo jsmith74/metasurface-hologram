@@ -40,6 +40,9 @@ int main(int argc, char *argv[])
         }
     }
 
+    if(samples.isGridComplete()) cout << "Interpolation grid is complete." << endl;
+    else cout << "Interpolation grid is incomplete." << std::endl;
+
     // Build B-splines that interpolate the samples
     BSpline bspline1 = BSpline::Builder(samples).degree(1).build();
     BSpline bspline3 = BSpline::Builder(samples).degree(3).build();
